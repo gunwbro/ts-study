@@ -1,8 +1,30 @@
-function identity<T>(arg: T): T {
-  return arg;
+interface IPerson {
+  age: number;
+  name: string;
+  NewYear(): void;
+  print(): void;
 }
 
-type sig =  <T>(arg: T) => T;
+class Person implements IPerson {
+  public age: number;
+  public name: string;
 
-let myIdentity: { <T>(arg: T): T } = identity;
-let myIdentity2: sig = identity;
+  constructor(age: number, face: string) {
+    this.age = age;
+    this.name = face;
+  }
+
+  NewYear(): void {
+    this.age++;
+  }
+
+  print() {
+    console.log(`${this.name}의 나이는 ${this.age} 입니다.`);
+  }
+}
+
+let sohee: Person = new Person(23, "Sohee");
+
+sohee.print();
+sohee.NewYear();
+sohee.print();
