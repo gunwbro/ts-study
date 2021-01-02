@@ -25,6 +25,7 @@ class Person implements IPerson {
 
 let sohee: Person = new Person(23, "Sohee");
 
+console.log("dwdw");
 sohee.print();
 sohee.NewYear();
 sohee.print();
